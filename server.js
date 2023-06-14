@@ -11,13 +11,25 @@ app.use(express.static(static_path))
 // set Template engine
 const template_path = path.join(__dirname,"/resources/views")
 
-// app.use(expressLayout)
+app.use(expressLayout)
 app.set("view engine","ejs");
 app.set("views",template_path);
 
 const port = 3000 || process.env.PORT;
 app.get('/',(req,res)=>{
     res.render("home");
+})
+
+app.get('/cart',(req,res)=>{
+    res.render("customers/cart")
+})
+
+app.get('/login',(req,res)=>{
+    res.render("auth/login")
+})
+
+app.get('/register',(req,res)=>{
+    res.render("auth/register")
 })
 
 app.listen(port,()=>{
