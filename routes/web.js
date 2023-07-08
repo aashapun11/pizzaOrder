@@ -27,6 +27,7 @@ router.get('/logout', authController.logout);
 router.get('/cart', cartController.index)
 router.post('/update-cart', cartController.update)
 
+
 // Customer routes
 router.post('/orders',auth, orderController.store)
 router.get('/customers/orders',auth, orderController.index)

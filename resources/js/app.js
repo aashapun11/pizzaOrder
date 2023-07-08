@@ -44,3 +44,16 @@ if(alertMsg){
 }
 
 initAdmin();
+
+
+//Deleting the cart
+// let deleteCart = document.querySelector('#deleteCart');
+// $(deleteCart).click(function(){
+//     alert("Hello")
+
+    // var id = $(this).attr("data-id");
+    // $.ajax({
+    //     "url" : `http://localhost:3000/delete-cart/${id}`,
+    //     "method" : "DELETE"
+    // })
+// })

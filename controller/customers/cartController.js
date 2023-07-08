@@ -40,6 +40,7 @@ const cartController = {
 
         return res.json({totalQty : req.session.cart.totalQty})
          
+    
     }
 }
 

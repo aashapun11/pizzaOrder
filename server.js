@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const path = require('path')
@@ -15,7 +17,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
-require('dotenv').config();
 
 
 
@@ -35,7 +36,7 @@ app.use(flash());
 app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave:false,
-    store : MongoDbStore.create({ mongoUrl: 'mongodb://0.0.0.0:27017/pizza' }),
+    store : MongoDbStore.create({ mongoUrl: process.env.MONGO_URL }),
     saveUninitialized : false,  
     cookie: {maxAge : 1000 * 60 * 60 *24} //24 hours
 
